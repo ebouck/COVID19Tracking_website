@@ -80,7 +80,8 @@
     "reflexbox": "^4.0.6",
     "slugify": "^1.4.0",
     "typography": "^0.16.19",
-    "understory": "^1.11.0"
+    "understory": "^1.11.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -118,6 +119,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "setup": "run-s setup:api-data setup:env-vars",
     "setup:api-data": "curl https://covidtracking.com/api/archive.tar.gz | tar -xz",
-    "setup:env-vars": "curl -L https://covidtracking.com/__developer/env-vars > .env"
-  }
+    "setup:env-vars": "curl -L https://covidtracking.com/__developer/env-vars > .env",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
